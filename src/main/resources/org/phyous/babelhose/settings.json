@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "twitter": {
+      "consumerKey": "",
+      "consumerSecret": "",
+      "token": "",
+      "secret": ""
+    },
+    "bing-translator": {
+      "clientId": "",
+      "clientSecret": ""
+    }
+  }
+}
