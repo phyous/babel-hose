@@ -1,6 +1,9 @@
 babel-hose
 =====
 
+![Babel Logo](/images/tower-of-babel-dark-big.jpg)
+Format: ![Alt Text](url)
+
 > "Now the whole world had one language and a common speech."
 > 	-- Genesis 11:1
 
