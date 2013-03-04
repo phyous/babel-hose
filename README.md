@@ -41,6 +41,11 @@ usage: babel-hose
 
 * Translate the 100 most recent non-english tweets into english (show ~3 tweets a second):
 > java -jar target/babel-hose-1.0-jar-with-dependencies.jar -qps 3 -language=en -numTweets=100
+```text
+--- @erikbertaina : Mon Mar 04 06:19:53 +0000 2013 ---> [Location: argentina]
+[es] Esperando, simplemente, viendo cómo el tiempo pasa sin que pase nada http://t.co/To9ms7DSGx =>
+[en] Waiting for you, just seeing how time goes by without you pass nothing http://t.co/To9ms7DSGx
+```
 
 * Help the French understand what yolo means:
 > java -jar target/babel-hose-1.0-jar-with-dependencies.jar -filterList="#yolo" -language=fr
@@ -48,4 +53,5 @@ usage: babel-hose
 * Help the Americans understand european football:
 > java -jar target/babel-hose-1.0-jar-with-dependencies.jar -filterList="fútbol" -language=en
 
-java -cp "lib/*" -jar target/babel-hose-1.0-jar-with-dependencies.jar -qps 2 -filterList="#yolo" -language=fr
+* A special debug mode that shows discrepancies in translations of twitter entities (@/#/$/Url)
+java -cp "lib/*" -jar target/babel-hose-1.0-jar-with-dependencies.jar -qps 2000 -mode=entity
