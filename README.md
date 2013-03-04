@@ -18,7 +18,9 @@ Before you can get started, you'll need developer accounts for both Twitter and 
 
 4- Add Bing & Twitter credentials to babel-hose/src/main/resources/org/phyous/babelhose/settings.json
 
-5- Compile the code:
+5- You'll need java and maven installed. See [here](http://www.mkyong.com/maven/how-to-install-maven-in-windows/) for windows and [here](http://maven.apache.org/download.cgi) for everyone else.
+
+6- Compile the code:
 ```mvn clean install```
 
 ## Usage Examples
@@ -64,4 +66,4 @@ usage: babel-hose
 ```
 
 * A special debug mode that shows discrepancies in translations of twitter entities (@/#/$/Url)
-> java -cp "lib/*" -jar target/babel-hose-1.0-jar-with-dependencies.jar -qps 2000 -mode=entity
+> java -Xbootclasspath/a:./libs/twitter-text-1.6.0.jar -jar target/babel-hose-1.0-jar-with-dependencies.jar -m entity
