@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import com.google.common.base.Joiner;
+import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.InputSupplier;
@@ -64,6 +65,7 @@ public class Main {
       System.exit(-1);
     }
 
+    checkCredentials();
     if (cmd.hasOption(HELP)) {
       printHelpAndBail();
     }
@@ -150,5 +152,14 @@ public class Main {
     }
 
     return ret;
+  }
+
+  private static void checkCredentials(){
+    if(Strings.isNullOrEmpty(Settings.getKey(Settings.Client.BING, "clientId")) ||
+        Strings.isNullOrEmpty(Settings.getKey(Settings.Client.TWITTER, "consumerKey")) ) {
+      System.out.println("Did you forget to add your developer credentials to settings.json? " +
+          "Find out more by reading the README.md");
+      printHelpAndBail();
+    }
   }
 }
