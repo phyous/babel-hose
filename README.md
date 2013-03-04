@@ -4,7 +4,7 @@ babel-hose
 > "Now the whole world had one language and a common speech."
 > 	-- Genesis 11:1
 
-Twitters [streaming API](https://dev.twitter.com/docs/streaming-apis) hooked up to [Bing translator](http://www.bing.com/translator/) allowing you to understand what's happening everywhere in the world in real time.
+Twitters [streaming API](https://dev.twitter.com/docs/streaming-apis) hooked up to [Bing translator](http://www.bing.com/translator/) allowing you to understand what's happening everywhere in the world in real time in your native language.
 This project leverages the recently released [hosebird](https://github.com/twitter/hbc) framework for easy access to the [sample](https://dev.twitter.com/docs/api/1.1/get/statuses/sample) and [filter](https://dev.twitter.com/docs/api/1.1/post/statuses/filter) streams.
 
 ## Setup
@@ -49,9 +49,19 @@ usage: babel-hose
 
 * Help the French understand what yolo means:
 > java -jar target/babel-hose-1.0-jar-with-dependencies.jar -filterList="#yolo" -language=fr
+```text
+--- @itsjaylin : Mon Mar 04 06:24:46 +0000 2013 ---> [Location: Austin, Texas]
+[en] Forget #YOLO, its all about them #ROLO's. =>
+[fr] Oubliez #YOLO, son tout environ de leur #ROLO.
+```
 
 * Help the Americans understand european football:
 > java -jar target/babel-hose-1.0-jar-with-dependencies.jar -filterList="fútbol" -language=en
+```text
+--- @jonaspekee : Mon Mar 04 06:25:58 +0000 2013 ---> [Location: Guayaquil-Ecuador]
+[es] RT @RMFutbolOnline: Didier Drogba: "La mayoría de los fans del Barcelona, son niños quienes vieron fútbol ayer por primera vez en su vida". =>
+[en] RT @RMFutbolOnline: Didier Drogba: "the majority of the Barcelona fans, are children who saw football yesterday for the first time in his life".
+```
 
 * A special debug mode that shows discrepancies in translations of twitter entities (@/#/$/Url)
-java -cp "lib/*" -jar target/babel-hose-1.0-jar-with-dependencies.jar -qps 2000 -mode=entity
+> java -cp "lib/*" -jar target/babel-hose-1.0-jar-with-dependencies.jar -qps 2000 -mode=entity

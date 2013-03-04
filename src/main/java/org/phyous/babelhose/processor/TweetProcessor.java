@@ -98,7 +98,7 @@ public class TweetProcessor {
       try {
         String msg = queue.poll(5, TimeUnit.SECONDS);
         if (msg == null) {
-          System.out.println("Did not receive a message in 5 seconds");
+          System.out.println("5 seconds elapsed and still no babel...");
         } else {
           TwitterStatus status = new TwitterStatus(msg);
           Runnable worker;
