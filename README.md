@@ -67,4 +67,4 @@ usage: babel-hose
 ```
 
 * A special debug mode that shows discrepancies in translations of twitter entities (@/#/$/Url)
-> java -Xbootclasspath/a:./libs/twitter-text-1.6.0.jar -jar target/babel-hose-1.0-jar-with-dependencies.jar -m entity
+> java -jar target/babel-hose-1.0-jar-with-dependencies.jar -m entity
